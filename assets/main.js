@@ -19,3 +19,19 @@ if (isNaN(userkm)) {
     window.location.reload();
 
 }
+
+//chiedi l' eta dell' utente
+
+const userAge = parseInt(prompt('Qanti anni hai?'));
+
+if (isNaN(userAge)) {
+
+    alert('non hai inserito nessun numero');
+    window.location.reload();
+
+} else if(userAge < 1 || userAge > 99) {
+
+    alert("non hai inserito un'età valida");
+    window.location.reload();
+    
+}
