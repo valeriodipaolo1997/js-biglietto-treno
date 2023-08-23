@@ -35,3 +35,36 @@ if (isNaN(userAge)) {
     window.location.reload();
     
 }
+
+//calcola il prezzo del biglietto in base all' eta e ai chilometri
+
+
+const ticketPrice = userkm * 0.21;
+
+let discountTicket;
+let finalPrice;
+
+if (userAge < 18) {
+
+    discountTicket = ticketPrice * 20 / 100;
+    finalPrice = Number((ticketPrice - discountTicket).toFixed(2));
+    console.log(finalPrice);
+
+} else if (userAge > 65) {
+
+    discountTicket = ticketPrice * 40 / 100;
+    finalPrice = Number((ticketPrice - discountTicket).toFixed(2));
+    console.log(finalPrice);
+
+} else {
+
+    finalPrice = Number(ticketPrice.toFixed(2));
+    console.log(finalPrice);
+
+};
+
+//stampa risultato in pagina
+
+const ticket = document.getElementById('ticket_price');
+ticket.innerHTML = `Il prezzo del biglietto è: ${finalPrice} €`;
+
